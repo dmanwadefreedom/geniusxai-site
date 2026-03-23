@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GeniusXAi — AI Growth Accelerator for Real Estate</title>
-    <meta name="description" content="Never lose another lead. GeniusXAi installs a complete AI team into your brokerage — receptionist, lead gen, content, follow-up — so you close more deals without hiring anyone.">
-    <meta property="og:title" content="GeniusXAi — Stop Losing Leads. Start Closing More.">
-    <meta property="og:description" content="The AI Growth Accelerator for real estate brokers. 90-day lead guarantee. Only 10 brokerages per month.">
+    <title>GeniusXAi — 100 Top Brokers. 1 AI Research Report. Your Name In It.</title>
+    <meta name="description" content="We're interviewing 100 top real estate brokers about how AI is changing the industry. Get published, get publicity, get connected — free.">
+    <meta property="og:title" content="GeniusXAi — Be Featured in the 2026 AI Real Estate Report">
+    <meta property="og:description" content="100 top brokers. 1 research report. Published across 100+ outlets. Free publicity for forward-thinking real estate professionals.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://geniusxai.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,489 +15,304 @@
     <style>
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
         :root{
-            --bg-dark:#030712;--bg-alt:#0B1120;--bg-card:rgba(255,255,255,0.04);
-            --bg-card-h:rgba(255,255,255,0.07);--border:rgba(255,255,255,0.08);
-            --blue:#3B82F6;--purple:#8B5CF6;--cyan:#06B6D4;--green:#22C55E;--amber:#F59E0B;
-            --grad:linear-gradient(135deg,#3B82F6,#8B5CF6);
-            --text:#F1F5F9;--text2:#94A3B8;--text3:#64748B;
-            --font:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+            --bg:#030712;--bg2:#0B1120;--card:rgba(255,255,255,0.04);--card-h:rgba(255,255,255,0.07);
+            --border:rgba(255,255,255,0.08);--blue:#3B82F6;--purple:#8B5CF6;--cyan:#06B6D4;
+            --green:#22C55E;--amber:#F59E0B;--grad:linear-gradient(135deg,#3B82F6,#8B5CF6);
+            --t1:#F1F5F9;--t2:#94A3B8;--t3:#64748B;
+            --font:'Inter',-apple-system,BlinkMacSystemFont,sans-serif
         }
         html{scroll-behavior:smooth}
-        body{font-family:var(--font);background:var(--bg-dark);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+        body{font-family:var(--font);background:var(--bg);color:var(--t1);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-        /* ── SCROLL PROGRESS ── */
-        .scroll-progress{position:fixed;top:0;left:0;height:3px;background:var(--grad);z-index:200;width:0%;transition:width 0.1s}
+        .scroll-bar{position:fixed;top:0;left:0;height:3px;background:var(--grad);z-index:200;width:0%;transition:width .1s}
 
-        /* ── NAV ── */
-        .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);background:rgba(3,7,18,0.7);border-bottom:1px solid var(--border);transition:all .3s}
-        .nav.scrolled{background:rgba(3,7,18,0.95)}
-        .nav-logo{font-size:1.5rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.02em}
-        .nav-cta{padding:.625rem 1.5rem;background:var(--grad);color:#fff;border:none;border-radius:8px;font-weight:600;font-size:.875rem;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s;min-height:44px;display:flex;align-items:center}
-        .nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 30px rgba(59,130,246,.3)}
+        /* NAV */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);background:rgba(3,7,18,.7);border-bottom:1px solid var(--border);transition:all .3s}
+        .nav.scrolled{background:rgba(3,7,18,.95)}
+        .logo{font-size:1.5rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.02em}
+        .nav-btn{padding:.625rem 1.5rem;background:var(--grad);color:#fff;border:none;border-radius:8px;font-weight:600;font-size:.875rem;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s;min-height:44px;display:flex;align-items:center}
+        .nav-btn:hover{transform:translateY(-1px);box-shadow:0 8px 30px rgba(59,130,246,.3)}
 
-        /* ── FLOATING CTA ── */
-        .float-cta{position:fixed;bottom:1.5rem;right:1.5rem;z-index:99;opacity:0;pointer-events:none;transition:all .4s}
-        .float-cta.visible{opacity:1;pointer-events:auto}
-        .float-cta a{display:flex;align-items:center;gap:.5rem;padding:.85rem 1.75rem;background:var(--grad);color:#fff;border-radius:50px;font-weight:700;font-size:.9rem;text-decoration:none;box-shadow:0 8px 32px rgba(59,130,246,.4);transition:transform .2s;min-height:48px}
-        .float-cta a:hover{transform:scale(1.05)}
+        /* FLOAT CTA */
+        .float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:99;opacity:0;pointer-events:none;transition:all .4s}
+        .float.on{opacity:1;pointer-events:auto}
+        .float a{display:flex;align-items:center;gap:.5rem;padding:.85rem 1.75rem;background:var(--grad);color:#fff;border-radius:50px;font-weight:700;font-size:.9rem;text-decoration:none;box-shadow:0 8px 32px rgba(59,130,246,.4);transition:transform .2s;min-height:48px}
+        .float a:hover{transform:scale(1.05)}
 
-        /* ── COMMON ── */
+        /* SHARED */
         section{padding:6rem 2rem}
-        .container{max-width:1100px;margin:0 auto}
+        .wrap{max-width:1100px;margin:0 auto}
         .label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--blue);margin-bottom:.75rem}
-        .stitle{font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.12;letter-spacing:-.02em;margin-bottom:1rem}
-        .sdesc{font-size:1.1rem;color:var(--text2);max-width:600px;line-height:1.7}
-        .grad-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-        .btn-p{padding:1rem 2.25rem;background:var(--grad);color:#fff;border:none;border-radius:12px;font-weight:700;font-size:1.05rem;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s;min-height:54px;display:inline-flex;align-items:center;gap:.5rem}
-        .btn-p:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(59,130,246,.35)}
-        .btn-s{padding:1rem 2.25rem;background:transparent;color:var(--text);border:1px solid var(--border);border-radius:12px;font-weight:600;font-size:1.05rem;cursor:pointer;text-decoration:none;transition:all .2s;min-height:54px;display:inline-flex;align-items:center;gap:.5rem}
-        .btn-s:hover{background:var(--bg-card);border-color:rgba(255,255,255,.15)}
+        .h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.12;letter-spacing:-.02em;margin-bottom:1rem}
+        .sub{font-size:1.1rem;color:var(--t2);max-width:600px;line-height:1.7}
+        .g{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .btn{padding:1rem 2.25rem;background:var(--grad);color:#fff;border:none;border-radius:12px;font-weight:700;font-size:1.05rem;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s;min-height:54px;display:inline-flex;align-items:center;gap:.5rem}
+        .btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(59,130,246,.35)}
+        .btn-o{padding:1rem 2.25rem;background:transparent;color:var(--t1);border:1px solid var(--border);border-radius:12px;font-weight:600;font-size:1.05rem;cursor:pointer;text-decoration:none;transition:all .2s;min-height:54px;display:inline-flex;align-items:center;gap:.5rem}
+        .btn-o:hover{background:var(--card);border-color:rgba(255,255,255,.15)}
+        .fade{opacity:0;transform:translateY(30px);transition:opacity .6s ease-out,transform .6s ease-out}
+        .fade.vis{opacity:1;transform:translateY(0)}
 
-        /* ── HERO ── */
+        /* HERO */
         .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:8rem 2rem 4rem;position:relative;overflow:hidden}
         .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 25% 15%,rgba(59,130,246,.1) 0%,transparent 50%),radial-gradient(ellipse at 75% 85%,rgba(139,92,246,.07) 0%,transparent 50%),radial-gradient(ellipse at 50% 50%,rgba(6,182,212,.05) 0%,transparent 40%);animation:glow 20s ease-in-out infinite alternate}
-        @keyframes glow{0%{transform:translate(0,0) rotate(0deg)}100%{transform:translate(-3%,2%) rotate(1deg)}}
-        .hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.25rem;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:100px;font-size:.8rem;color:var(--green);margin-bottom:2rem;position:relative;z-index:1;font-weight:600}
-        .hero-badge-dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 2s ease-in-out infinite}
-        @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-        .hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.06;letter-spacing:-.03em;max-width:850px;position:relative;z-index:1;margin-bottom:1.5rem}
-        .hero-sub{font-size:clamp(1rem,2vw,1.2rem);color:var(--text2);max-width:600px;line-height:1.75;margin-bottom:2.5rem;position:relative;z-index:1}
+        @keyframes glow{0%{transform:translate(0,0)}100%{transform:translate(-3%,2%)}}
+        .badge{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.25rem;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:100px;font-size:.8rem;color:var(--green);margin-bottom:2rem;position:relative;z-index:1;font-weight:600}
+        .dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:p 2s ease-in-out infinite}
+        @keyframes p{0%,100%{opacity:1}50%{opacity:.3}}
+        .hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.06;letter-spacing:-.03em;max-width:900px;position:relative;z-index:1;margin-bottom:1.5rem}
+        .hero-sub{font-size:clamp(1rem,2vw,1.2rem);color:var(--t2);max-width:620px;line-height:1.75;margin-bottom:2.5rem;position:relative;z-index:1}
         .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;position:relative;z-index:1;margin-bottom:3rem}
-        .hero-trust{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;position:relative;z-index:1}
-        .hero-trust span{font-size:.8rem;color:var(--text3);display:flex;align-items:center;gap:.4rem;font-weight:500}
+        .trust{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;position:relative;z-index:1}
+        .trust span{font-size:.8rem;color:var(--t3);display:flex;align-items:center;gap:.4rem;font-weight:500}
+        .ck{width:14px;height:14px}
 
-        /* ── PAIN ── */
-        .pain{background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-        .pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:2rem}
-        .pain-card{padding:2rem;background:rgba(239,68,68,.04);border:1px solid rgba(239,68,68,.12);border-radius:16px;position:relative;overflow:hidden}
-        .pain-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#EF4444,#F97316)}
-        .pain-icon{width:44px;height:44px;background:rgba(239,68,68,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
-        .pain-icon svg{width:22px;height:22px;color:#EF4444}
-        .pain-card h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
-        .pain-card p{font-size:.9rem;color:var(--text2);line-height:1.6}
-        .pain-stat{font-size:2.2rem;font-weight:900;color:#EF4444;margin-bottom:.25rem}
+        /* WHAT YOU GET */
+        .perks{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+        .perks-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:2.5rem}
+        .perk{padding:2rem;background:var(--card);border:1px solid var(--border);border-radius:16px;transition:all .3s;position:relative}
+        .perk:hover{background:var(--card-h);transform:translateY(-2px)}
+        .perk::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad);opacity:0;transition:opacity .3s}
+        .perk:hover::after{opacity:1}
+        .perk-icon{width:48px;height:48px;background:linear-gradient(135deg,rgba(59,130,246,.15),rgba(139,92,246,.1));border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem}
+        .perk-icon svg{width:24px;height:24px;color:var(--blue)}
+        .perk h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
+        .perk p{font-size:.9rem;color:var(--t2);line-height:1.6}
 
-        /* ── SOLUTION BRIDGE ── */
-        .bridge{text-align:center}
-        .bridge-box{max-width:700px;margin:2rem auto 0;padding:2.5rem;background:linear-gradient(145deg,rgba(59,130,246,.08),rgba(139,92,246,.06));border:1px solid rgba(59,130,246,.15);border-radius:20px}
-        .bridge-box p{font-size:1.15rem;color:var(--text2);line-height:1.7;margin-bottom:1rem}
-        .bridge-box p:last-child{margin-bottom:0}
-        .bridge-box strong{color:var(--text)}
+        /* REPORT */
+        .report{text-align:center}
+        .report-card{max-width:700px;margin:2.5rem auto 0;padding:3rem;background:linear-gradient(145deg,rgba(6,182,212,.06),rgba(59,130,246,.08));border:1px solid rgba(6,182,212,.15);border-radius:20px}
+        .report-ed{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--cyan);margin-bottom:.5rem}
+        .report-card h3{font-size:1.4rem;font-weight:800;margin-bottom:.75rem}
+        .report-card>p{color:var(--t2);line-height:1.7;margin-bottom:2rem;font-size:1rem}
+        .report-stats{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;margin-bottom:2rem}
+        .rstat{text-align:center}
+        .rstat .num{font-size:2rem;font-weight:900;line-height:1}
+        .rstat .lbl{font-size:.8rem;color:var(--t3);margin-top:.25rem}
 
-        /* ── OFFER STACK ── */
-        .offer{background:var(--bg-alt);border-top:1px solid var(--border)}
-        .offer-header{text-align:center;margin-bottom:3rem}
-        .offer-name{display:inline-block;padding:.5rem 1.5rem;background:var(--grad);border-radius:100px;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.5rem}
-        .offer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem}
-        .offer-card{padding:2rem;background:var(--bg-card);border:1px solid var(--border);border-radius:16px;transition:all .3s;position:relative}
-        .offer-card:hover{background:var(--bg-card-h);border-color:rgba(59,130,246,.2);transform:translateY(-3px)}
-        .offer-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad);opacity:0;transition:opacity .3s}
-        .offer-card:hover::after{opacity:1}
-        .oc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem}
-        .oc-icon{width:48px;height:48px;background:linear-gradient(135deg,rgba(59,130,246,.15),rgba(139,92,246,.1));border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-        .oc-icon svg{width:24px;height:24px;color:var(--blue)}
-        .oc-value{font-size:.8rem;font-weight:700;color:var(--amber);background:rgba(245,158,11,.1);padding:.25rem .75rem;border-radius:6px}
-        .offer-card h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
-        .offer-card p{font-size:.9rem;color:var(--text2);line-height:1.6}
-
-        /* ── BONUSES ── */
-        .bonuses .container{max-width:800px}
-        .bonus-item{display:flex;gap:1.5rem;padding:2rem;background:var(--bg-card);border:1px solid var(--border);border-radius:16px;margin-bottom:1rem;transition:all .3s;align-items:flex-start}
-        .bonus-item:hover{background:var(--bg-card-h);border-color:rgba(34,197,94,.15)}
-        .bonus-num{width:48px;height:48px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;font-weight:900;color:var(--green);flex-shrink:0}
-        .bonus-content h3{font-size:1.05rem;font-weight:700;margin-bottom:.25rem}
-        .bonus-content p{font-size:.9rem;color:var(--text2);line-height:1.5}
-        .bonus-val{font-size:.8rem;font-weight:700;color:var(--green);margin-top:.5rem}
-
-        /* ── VALUE TOTAL ── */
-        .vtotal{background:var(--bg-alt);border-top:1px solid var(--border);text-align:center}
-        .vtotal .container{max-width:700px}
-        .vt-row{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--border)}
-        .vt-row:last-child{border-bottom:none}
-        .vt-label{font-weight:500;color:var(--text2)}
-        .vt-val{font-weight:700;color:var(--text3);text-decoration:line-through}
-        .vt-box{padding:2rem;background:linear-gradient(135deg,rgba(59,130,246,.1),rgba(139,92,246,.08));border:1px solid rgba(59,130,246,.2);border-radius:16px;margin-top:2rem}
-        .vt-box .big{font-size:clamp(1.5rem,3vw,2.5rem);font-weight:900}
-        .vt-box .sub{font-size:1rem;color:var(--text2);margin-top:.5rem}
-        .vt-box .micro{font-size:.85rem;color:var(--text3);margin-top:.75rem}
-
-        /* ── GUARANTEE ── */
-        .guarantee{text-align:center}
-        .guarantee .container{max-width:700px}
-        .g-box{padding:3rem;background:rgba(34,197,94,.04);border:2px solid rgba(34,197,94,.2);border-radius:20px;margin-top:2rem}
-        .g-shield{width:64px;height:64px;background:rgba(34,197,94,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem}
-        .g-shield svg{width:32px;height:32px;color:var(--green)}
-        .g-name{font-size:1.4rem;font-weight:800;margin-bottom:.5rem}
-        .g-box p{font-size:1rem;color:var(--text2);line-height:1.7;max-width:550px;margin:0 auto}
-
-        /* ── STEPS ── */
-        .steps-section{background:var(--bg-alt);border-top:1px solid var(--border)}
-        .steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:3rem}
-        .step{text-align:center;padding:2.5rem 2rem;background:var(--bg-card);border:1px solid var(--border);border-radius:16px}
-        .step-num{width:56px;height:56px;background:var(--grad);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:900;margin:0 auto 1.5rem}
+        /* HOW */
+        .how{background:var(--bg2);border-top:1px solid var(--border)}
+        .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:3rem}
+        .step{text-align:center;padding:2.5rem 2rem;background:var(--card);border:1px solid var(--border);border-radius:16px}
+        .step-n{width:56px;height:56px;background:var(--grad);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:900;margin:0 auto 1.5rem}
         .step h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
-        .step p{font-size:.9rem;color:var(--text2);line-height:1.6}
+        .step p{font-size:.9rem;color:var(--t2);line-height:1.6}
 
-        /* ── WHITE PAPER LEAD MAGNET ── */
-        .magnet{text-align:center}
-        .magnet .container{max-width:700px}
-        .magnet-box{padding:3rem;background:linear-gradient(145deg,rgba(6,182,212,.06),rgba(59,130,246,.08));border:1px solid rgba(6,182,212,.15);border-radius:20px;margin-top:2rem}
-        .magnet-box h3{font-size:1.3rem;font-weight:800;margin-bottom:.75rem}
-        .magnet-box p{font-size:1rem;color:var(--text2);line-height:1.6;margin-bottom:1.5rem}
-        .magnet-perks{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-bottom:2rem}
-        .magnet-perks span{font-size:.8rem;font-weight:600;padding:.4rem 1rem;background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.15);border-radius:8px;color:var(--cyan)}
+        /* AI SOFT SELL */
+        .ai-soft{text-align:center}
+        .ai-soft .wrap{max-width:750px}
+        .ai-box{padding:2.5rem;background:var(--card);border:1px solid var(--border);border-radius:20px;margin-top:2rem}
+        .ai-box p{font-size:1rem;color:var(--t2);line-height:1.7;margin-bottom:1rem}
+        .ai-box p:last-child{margin-bottom:0}
+        .ai-tags{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1.5rem}
+        .ai-tags span{font-size:.75rem;font-weight:600;padding:.4rem .85rem;background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.12);border-radius:8px;color:var(--blue)}
 
-        /* ── FINAL CTA ── */
+        /* CTA */
         .final{text-align:center;padding:8rem 2rem;position:relative;overflow:hidden}
         .final::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(59,130,246,.12) 0%,transparent 65%)}
         .final h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:900;line-height:1.12;letter-spacing:-.02em;margin-bottom:1rem;position:relative;z-index:1}
-        .final>p{font-size:1.1rem;color:var(--text2);margin-bottom:2.5rem;position:relative;z-index:1}
-        .final .btn-p{position:relative;z-index:1;font-size:1.15rem;padding:1.15rem 3rem}
-        .scarcity-bar{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.25rem;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:100px;font-size:.8rem;color:var(--amber);margin-bottom:2rem;position:relative;z-index:1;font-weight:600}
-        .final .micro{margin-top:1.5rem;font-size:.8rem;color:var(--text3);position:relative;z-index:1}
+        .final>p{font-size:1.1rem;color:var(--t2);margin-bottom:2.5rem;position:relative;z-index:1;max-width:550px;margin-left:auto;margin-right:auto}
+        .final .btn{position:relative;z-index:1;font-size:1.15rem;padding:1.15rem 3rem}
+        .scar{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.25rem;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:100px;font-size:.8rem;color:var(--amber);margin-bottom:2rem;position:relative;z-index:1;font-weight:600}
+        .final .micro{margin-top:1.5rem;font-size:.8rem;color:var(--t3);position:relative;z-index:1}
 
-        /* ── FOOTER ── */
+        /* FOOTER */
         .footer{padding:3rem 2rem;border-top:1px solid var(--border);text-align:center}
-        .footer-logo{font-size:1.25rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.5rem}
-        .footer p{font-size:.8rem;color:var(--text3)}
+        .footer .logo{font-size:1.25rem;margin-bottom:.5rem;display:block}
+        .footer p{font-size:.8rem;color:var(--t3)}
 
-        /* ── ANIMATIONS ── */
-        .fade-up{opacity:0;transform:translateY(30px);transition:opacity .6s ease-out,transform .6s ease-out}
-        .fade-up.vis{opacity:1;transform:translateY(0)}
-
-        /* ── RESPONSIVE ── */
+        /* RESPONSIVE */
         @media(max-width:768px){
-            .nav{padding:.75rem 1rem}.nav-logo{font-size:1.2rem}
+            .nav{padding:.75rem 1rem}.logo{font-size:1.2rem}
             section{padding:4rem 1.25rem}
             .hero{padding:7rem 1.25rem 3rem;min-height:auto}
             .hero-ctas{flex-direction:column;align-items:center}
-            .btn-p,.btn-s{width:100%;justify-content:center;max-width:340px}
-            .hero-trust{gap:.75rem}
-            .offer-grid{grid-template-columns:1fr}
-            .pain-grid{grid-template-columns:1fr}
-            .bonus-item{flex-direction:column;gap:1rem}
-            .vt-row{flex-direction:column;gap:.25rem;text-align:center}
-            .float-cta{bottom:1rem;right:1rem;left:1rem}
-            .float-cta a{width:100%;justify-content:center}
-            .magnet-perks{flex-direction:column;align-items:center}
+            .btn,.btn-o{width:100%;justify-content:center;max-width:340px}
+            .trust{gap:.75rem}
+            .perks-grid{grid-template-columns:1fr}
+            .report-stats{gap:1.5rem}
+            .float{bottom:1rem;right:1rem;left:1rem}
+            .float a{width:100%;justify-content:center}
+            .ai-tags{gap:.4rem}
         }
     </style>
 </head>
 <body>
-    <div class="scroll-progress" id="scrollProg"></div>
+    <div class="scroll-bar" id="sb"></div>
 
-    <!-- NAV -->
     <nav class="nav" id="nav">
-        <div class="nav-logo">GeniusXAi</div>
-        <a href="#apply" class="nav-cta">Apply Now</a>
+        <span class="logo">GeniusXAi</span>
+        <a href="#apply" class="nav-btn">Get Featured</a>
     </nav>
 
-    <!-- FLOATING CTA -->
-    <div class="float-cta" id="floatCta">
+    <div class="float" id="fc">
         <a href="#apply">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            Book Strategy Call
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            Apply to Be Featured
         </a>
     </div>
 
     <!-- HERO -->
     <section class="hero">
-        <div class="hero-badge"><span class="hero-badge-dot"></span> Only 10 Spots Per Month</div>
-        <h1 class="fade-up">Stop Losing Leads.<br><span class="grad-text">Start Closing More.</span></h1>
-        <p class="hero-sub fade-up">GeniusXAi installs a complete AI team into your brokerage — receptionist, lead gen, content, follow-up — so you close more deals without hiring anyone.</p>
-        <div class="hero-ctas fade-up">
-            <a href="#apply" class="btn-p">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                Apply for Strategy Call
+        <div class="badge fade"><span class="dot"></span> Now Accepting 2026 Interviews</div>
+        <h1 class="fade">We're Featuring <span class="g">100 Top Brokers</span> in Our AI Research Report</h1>
+        <p class="hero-sub fade">Free publicity. Free networking. Free content. We publish your interview across 100+ outlets — all we need is 10 minutes of your time.</p>
+        <div class="hero-ctas fade">
+            <a href="#apply" class="btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                Apply to Be Featured
             </a>
-            <a href="#offer" class="btn-s">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16"/></svg>
+            <a href="#perks" class="btn-o">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16"/></svg>
                 See What You Get
             </a>
         </div>
-        <div class="hero-trust fade-up">
-            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 90-Day Lead Guarantee</span>
-            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Done-For-You Setup</span>
-            <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Cancel Anytime</span>
+        <div class="trust fade">
+            <span><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Published Quarterly</span>
+            <span><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 100+ Publications</span>
+            <span><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 5,000+ Readers</span>
+            <span><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 100% Free</span>
         </div>
     </section>
 
-    <!-- PAIN -->
-    <section class="pain">
-        <div class="container">
-            <div class="label fade-up">The Problem</div>
-            <h2 class="stitle fade-up">Your Brokerage Is Bleeding Money<br>Right Now</h2>
-            <div class="pain-grid">
-                <div class="pain-card fade-up">
-                    <div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div>
-                    <div class="pain-stat" data-target="78" data-suffix="%">0%</div>
-                    <h3>of leads go cold</h3>
-                    <p>Because agents can't respond fast enough. The first agent to answer gets the deal. How fast do you respond?</p>
+    <!-- WHAT YOU GET -->
+    <section class="perks" id="perks">
+        <div class="wrap">
+            <div class="label fade">What You Get</div>
+            <h2 class="h2 fade">10 Minutes of Your Time.<br><span class="g">This Much Value.</span></h2>
+            <p class="sub fade">Every broker we feature receives all of this — no cost, no catch, no pitch.</p>
+            <div class="perks-grid">
+                <div class="perk fade">
+                    <div class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"/><polyline points="14 2 14 8 20 8"/><path d="M2 15h10"/><path d="M9 18l3-3-3-3"/></svg></div>
+                    <h3>Published Interview</h3>
+                    <p>Your insights featured in our quarterly AI research report. Your name, your brokerage, your expertise — in print and online.</p>
                 </div>
-                <div class="pain-card fade-up">
-                    <div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-                    <div class="pain-stat" data-target="15" data-suffix="+ hrs/wk">0</div>
-                    <h3>wasted on admin</h3>
-                    <p>Your agents spend 15+ hours every week on tasks that AI handles in seconds. That's 15 hours they're not closing deals.</p>
+                <div class="perk fade">
+                    <div class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                    <h3>100+ Publication Distribution</h3>
+                    <p>Your feature distributed across top online magazines and news outlets. Authority positioning that money can't buy.</p>
                 </div>
-                <div class="pain-card fade-up">
-                    <div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-                    <div class="pain-stat" data-target="3" data-suffix="x more deals">0</div>
-                    <h3>for AI-powered brokerages</h3>
-                    <p>Brokerages using AI close 3x more deals. Every day without AI is a day your competitors pull further ahead.</p>
+                <div class="perk fade">
+                    <div class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+                    <h3>LinkedIn Content</h3>
+                    <p>We turn your interview into polished LinkedIn posts, tag your brokerage, and drive engagement to your profile. Free content you didn't have to create.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SOLUTION BRIDGE -->
-    <section class="bridge">
-        <div class="container">
-            <h2 class="stitle fade-up">What If You Had an <span class="grad-text">Entire AI Team</span><br>Working 24/7?</h2>
-            <div class="bridge-box fade-up">
-                <p><strong>No salaries. No sick days. No turnover. No training.</strong></p>
-                <p>GeniusXAi installs a complete AI growth system into your brokerage. We build it. You approve it. It runs — while you focus on what you do best: closing deals and building relationships.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- OFFER STACK -->
-    <section class="offer" id="offer">
-        <div class="container">
-            <div class="offer-header">
-                <div class="offer-name fade-up">The AI Growth Accelerator</div>
-                <h2 class="stitle fade-up">Everything Your Brokerage Needs<br>to Dominate Your Market</h2>
-                <p class="sdesc fade-up" style="margin:0 auto">Six AI-powered systems. One package. Zero headcount added.</p>
-            </div>
-            <div class="offer-grid">
-                <div class="offer-card fade-up">
-                    <div class="oc-top">
-                        <div class="oc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-                        <span class="oc-value">$1,500/mo value</span>
-                    </div>
-                    <h3>AI Receptionist</h3>
-                    <p>Answers every call in under 3 rings. 24/7/365. Qualifies leads, books appointments, handles emergencies. Your clients never hear a voicemail again.</p>
+                <div class="perk fade">
+                    <div class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                    <h3>Broker Network Access</h3>
+                    <p>Connect with other featured brokers across the country. Share strategies, compare markets, and build relationships with peers who think like you.</p>
                 </div>
-                <div class="offer-card fade-up">
-                    <div class="oc-top">
-                        <div class="oc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-                        <span class="oc-value">$2,000/mo value</span>
-                    </div>
-                    <h3>Automated Lead Generation</h3>
-                    <p>AI scrapes social profiles, builds targeted prospect lists, and reaches out automatically. Fresh qualified leads delivered to your inbox every day.</p>
+                <div class="perk fade">
+                    <div class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+                    <h3>AI Market Assessment</h3>
+                    <p>After your interview, our team puts together a quick snapshot of how AI could help your specific brokerage. No obligation. Just useful information.</p>
                 </div>
-                <div class="offer-card fade-up">
-                    <div class="oc-top">
-                        <div class="oc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-                        <span class="oc-value">$1,500/mo value</span>
-                    </div>
-                    <h3>AI Content Engine</h3>
-                    <p>Daily posts created and published across Instagram, Facebook, LinkedIn, and TikTok. Market updates, listing highlights, tips — all in your voice, on autopilot.</p>
-                </div>
-                <div class="offer-card fade-up">
-                    <div class="oc-top">
-                        <div class="oc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
-                        <span class="oc-value">$1,000/mo value</span>
-                    </div>
-                    <h3>AI Sales Closer</h3>
-                    <p>Follows up with every lead via text, email, and DM. Nurtures cold prospects. Books appointments when they're ready. Never forgets. Never quits.</p>
-                </div>
-                <div class="offer-card fade-up">
-                    <div class="oc-top">
-                        <div class="oc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
-                        <span class="oc-value">$500/mo value</span>
-                    </div>
-                    <h3>Smart CRM</h3>
-                    <p>AI-powered pipeline management. Every lead tracked, scored, and prioritized. Know exactly who to call and when. No leads slip through the cracks.</p>
-                </div>
-                <div class="offer-card fade-up">
-                    <div class="oc-top">
-                        <div class="oc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-                        <span class="oc-value">$500/mo value</span>
-                    </div>
-                    <h3>Community Manager</h3>
-                    <p>AI monitors and engages across your online presence. Responds to comments, manages groups, and builds your reputation around the clock.</p>
+                <div class="perk fade">
+                    <div class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                    <h3>Recording for Your Use</h3>
+                    <p>You get the full recording of your interview. Use it for your own content, your website, your social media — it's yours.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- BONUSES -->
-    <section class="bonuses">
-        <div class="container">
-            <div class="label fade-up">Included Free</div>
-            <h2 class="stitle fade-up">Plus These Bonuses<br>Worth <span class="grad-text">$9,500</span></h2>
-            <p class="sdesc fade-up">Every new partner gets these at no extra cost.</p>
-            <div style="margin-top:2rem">
-                <div class="bonus-item fade-up">
-                    <div class="bonus-num">1</div>
-                    <div class="bonus-content">
-                        <h3>Published Feature in AI Real Estate Report</h3>
-                        <p>Your brokerage gets a featured interview published across 100+ online outlets. Free authority positioning and publicity that money can't buy.</p>
-                        <div class="bonus-val">$5,000 value — FREE</div>
-                    </div>
+    <!-- THE REPORT -->
+    <section class="report">
+        <div class="wrap">
+            <div class="label fade">The Research</div>
+            <h2 class="h2 fade">Real Estate Disruptors & AI</h2>
+            <p class="sub fade" style="margin:0 auto">How the top brokerages in America are thinking about artificial intelligence — and what it means for the industry.</p>
+            <div class="report-card fade">
+                <div class="report-ed">Q2 2026 Edition</div>
+                <h3>100 Brokers. 50 States. 1 Report.</h3>
+                <p>AI is about to change real estate more than the internet did. We're talking to the brokers who see it coming — the ones adapting, experimenting, and leading. Their insights will shape how the industry moves forward.</p>
+                <div class="report-stats">
+                    <div class="rstat"><div class="num g" data-target="100" data-suffix="">0</div><div class="lbl">Brokers Featured</div></div>
+                    <div class="rstat"><div class="num g" data-target="100" data-suffix="+">0</div><div class="lbl">Publications</div></div>
+                    <div class="rstat"><div class="num g" data-target="5" data-suffix="K+">0</div><div class="lbl">Industry Readers</div></div>
+                    <div class="rstat"><div class="num g" style="-webkit-text-fill-color:var(--green);color:var(--green)">FREE</div><div class="lbl">Cost to You</div></div>
                 </div>
-                <div class="bonus-item fade-up">
-                    <div class="bonus-num">2</div>
-                    <div class="bonus-content">
-                        <h3>Custom AI Growth Plan</h3>
-                        <p>Our team analyzes your brokerage and builds a personalized roadmap showing exactly where AI will save you the most time and close the most deals.</p>
-                        <div class="bonus-val">$2,500 value — FREE</div>
-                    </div>
-                </div>
-                <div class="bonus-item fade-up">
-                    <div class="bonus-num">3</div>
-                    <div class="bonus-content">
-                        <h3>White Glove Setup</h3>
-                        <p>We don't hand you software and say "good luck." Our team builds your entire AI system for you. You review it. You approve it. It launches.</p>
-                        <div class="bonus-val">$2,000 value — FREE</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- VALUE TOTAL -->
-    <section class="vtotal">
-        <div class="container">
-            <h2 class="stitle fade-up">Here's What You're Getting</h2>
-            <div class="fade-up">
-                <div class="vt-row"><span class="vt-label">AI Receptionist (24/7)</span><span class="vt-val">$1,500/mo</span></div>
-                <div class="vt-row"><span class="vt-label">Automated Lead Generation</span><span class="vt-val">$2,000/mo</span></div>
-                <div class="vt-row"><span class="vt-label">AI Content Engine</span><span class="vt-val">$1,500/mo</span></div>
-                <div class="vt-row"><span class="vt-label">AI Sales Closer</span><span class="vt-val">$1,000/mo</span></div>
-                <div class="vt-row"><span class="vt-label">Smart CRM</span><span class="vt-val">$500/mo</span></div>
-                <div class="vt-row"><span class="vt-label">Community Manager</span><span class="vt-val">$500/mo</span></div>
-                <div class="vt-row"><span class="vt-label">Published Feature + Growth Plan + Setup</span><span class="vt-val">$9,500</span></div>
-            </div>
-            <div class="vt-box fade-up">
-                <div class="big grad-text">Less than the cost of one part-time hire.</div>
-                <div class="sub">Total value: $7,000/mo + $9,500 in bonuses. Your investment? A fraction of what you'd pay a single employee.</div>
-                <div class="micro">No long-term contracts. Cancel anytime. We earn your business every month.</div>
-            </div>
-            <div style="margin-top:2rem" class="fade-up">
-                <a href="#apply" class="btn-p">Apply for Strategy Call</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- GUARANTEE -->
-    <section class="guarantee">
-        <div class="container">
-            <div class="label fade-up">Zero Risk</div>
-            <h2 class="stitle fade-up">The Lead Lock Guarantee</h2>
-            <div class="g-box fade-up">
-                <div class="g-shield">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <div class="g-name">You literally cannot lose.</div>
-                <p>If our AI system doesn't deliver qualified leads to your brokerage within 90 days, we keep working for free until it does. No contracts. No catches. No fine print. If it doesn't work, you don't pay.</p>
+                <a href="#apply" class="btn">Reserve Your Spot</a>
             </div>
         </div>
     </section>
 
     <!-- HOW IT WORKS -->
-    <section class="steps-section">
-        <div class="container">
+    <section class="how">
+        <div class="wrap">
             <div style="text-align:center">
-                <div class="label fade-up">Simple Process</div>
-                <h2 class="stitle fade-up">How It Works</h2>
+                <div class="label fade">Simple Process</div>
+                <h2 class="h2 fade">Three Steps. Zero Hassle.</h2>
             </div>
-            <div class="steps-grid">
-                <div class="step fade-up">
-                    <div class="step-num">1</div>
-                    <h3>Apply for a Strategy Call</h3>
-                    <p>15 minutes. We learn about your brokerage, your market, and your goals. If we're a fit, we move forward. If not, no hard feelings.</p>
+            <div class="steps">
+                <div class="step fade">
+                    <div class="step-n">1</div>
+                    <h3>Apply to Be Featured</h3>
+                    <p>Fill out a quick form or book a call. We'll confirm your spot and schedule your 10-minute interview at a time that works for you.</p>
                 </div>
-                <div class="step fade-up">
-                    <div class="step-num">2</div>
-                    <h3>We Build Your AI System</h3>
-                    <p>Our team installs and configures everything. Done-for-you. No tech skills needed. Takes days, not months. You review and approve.</p>
+                <div class="step fade">
+                    <div class="step-n">2</div>
+                    <h3>Share Your Expertise</h3>
+                    <p>Tell us about your market, your approach, and how you see AI changing the game. No scripts. Just a real conversation between professionals.</p>
                 </div>
-                <div class="step fade-up">
-                    <div class="step-num">3</div>
-                    <h3>Watch Your Business Grow</h3>
-                    <p>Leads flow in. Calls get answered. Content goes out. Follow-ups happen. You focus on closing deals and building relationships.</p>
+                <div class="step fade">
+                    <div class="step-n">3</div>
+                    <h3>Get Published</h3>
+                    <p>Your interview goes live across 100+ outlets. We send you the published feature, LinkedIn content, and your recording. Use it however you want.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- WHITE PAPER LEAD MAGNET -->
-    <section class="magnet">
-        <div class="container">
-            <div class="label fade-up">Free For All Partners</div>
-            <h2 class="stitle fade-up">Get Featured in Our<br><span class="grad-text">Industry Research Report</span></h2>
-            <div class="magnet-box fade-up">
-                <h3>Real Estate Disruptors & AI: Q2 2026</h3>
-                <p>Every GeniusXAi partner gets a featured interview in our quarterly research report — published across 100+ outlets. Free publicity, free authority positioning, free content for your social channels.</p>
-                <div class="magnet-perks">
-                    <span>Published Interview</span>
-                    <span>100+ Outlets</span>
-                    <span>Free Publicity</span>
-                    <span>Authority Positioning</span>
-                    <span>Social Content</span>
+    <!-- AI SOFT MENTION -->
+    <section class="ai-soft">
+        <div class="wrap">
+            <div class="label fade">Who We Are</div>
+            <h2 class="h2 fade">About GeniusXAi</h2>
+            <div class="ai-box fade">
+                <p>We're an AI solutions company that works with real estate professionals every day. We build the tools that help brokerages answer calls, generate leads, create content, and close deals — faster and smarter.</p>
+                <p>This research report isn't a sales pitch. It's genuinely about understanding how AI is reshaping the industry. But if you're curious about what's possible, we're happy to show you what our clients are using. No pressure. Just cutting-edge stuff that might be useful.</p>
+                <div class="ai-tags">
+                    <span>AI Receptionists</span>
+                    <span>Automated Lead Gen</span>
+                    <span>Content Creation</span>
+                    <span>Sales Automation</span>
+                    <span>Smart CRM</span>
+                    <span>Community Management</span>
                 </div>
-                <a href="#apply" class="btn-p">Claim Your Feature</a>
             </div>
         </div>
     </section>
 
     <!-- FINAL CTA -->
     <section class="final" id="apply">
-        <div class="scarcity-bar fade-up">
+        <div class="scar fade">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            Only 10 brokerages onboarded per month — spots fill fast
+            Interviewing 100 brokers this year — spots fill as we go
         </div>
-        <h2 class="fade-up">Your Competitors Are Already<br>Using AI. <span class="grad-text">Are You?</span></h2>
-        <p class="fade-up">Book a 15-minute strategy call. See exactly what AI can do for your brokerage. No pitch. No pressure. Just clarity.</p>
+        <h2 class="fade">Your Competitors Might<br>Already Be In. <span class="g">Are You?</span></h2>
+        <p class="fade">10 minutes. Free publicity. Free content. Free networking. The only thing it costs is a conversation.</p>
         <!-- REPLACE href with Sam's Calendly link -->
-        <a href="https://calendly.com" target="_blank" class="btn-p fade-up">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            Book Your Strategy Call
+        <a href="https://calendly.com" target="_blank" class="btn fade">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Book Your Interview
         </a>
-        <p class="micro fade-up">Q2 2026 Founding Member Pricing — Lock in your rate for life</p>
+        <p class="micro fade" style="margin-top:1.5rem;font-size:.8rem;color:var(--t3);position:relative;z-index:1">Q2 2026 Edition — Interviews closing soon</p>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
-        <div class="footer-logo">GeniusXAi</div>
+        <span class="logo">GeniusXAi</span>
         <p>&copy; 2026 GeniusXAi. All rights reserved.</p>
     </footer>
 
     <script>
-    // Intersection Observer
-    const obs=new IntersectionObserver((entries)=>{
-        entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('vis'),i*60);obs.unobserve(e.target)}})
-    },{threshold:.08,rootMargin:'0px 0px -30px 0px'});
-    document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
-
-    // Scroll: nav, floating CTA, progress bar
-    const nav=document.getElementById('nav'),floatCta=document.getElementById('floatCta'),prog=document.getElementById('scrollProg');
-    window.addEventListener('scroll',()=>{
-        const y=window.scrollY;
-        nav.classList.toggle('scrolled',y>50);
-        floatCta.classList.toggle('visible',y>600);
-        const max=document.documentElement.scrollHeight-window.innerHeight;
-        prog.style.width=(y/max*100)+'%';
-    });
-
-    // Animated counters
-    const counterObs=new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{
-            if(!e.isIntersecting)return;
-            const el=e.target,target=+el.dataset.target,suffix=el.dataset.suffix||'';
-            let current=0;const step=target/40;
-            const timer=setInterval(()=>{current+=step;if(current>=target){current=target;clearInterval(timer)}el.textContent=Math.round(current)+suffix},30);
-            counterObs.unobserve(el);
-        })
-    },{threshold:.5});
-    document.querySelectorAll('[data-target]').forEach(el=>counterObs.observe(el));
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-        a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})
-    });
+    const obs=new IntersectionObserver(e=>{e.forEach((x,i)=>{if(x.isIntersecting){setTimeout(()=>x.target.classList.add('vis'),i*60);obs.unobserve(x.target)}})},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+    document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+    const nav=document.getElementById('nav'),fc=document.getElementById('fc'),sb=document.getElementById('sb');
+    window.addEventListener('scroll',()=>{const y=window.scrollY;nav.classList.toggle('scrolled',y>50);fc.classList.toggle('on',y>600);sb.style.width=(y/(document.documentElement.scrollHeight-window.innerHeight)*100)+'%'});
+    const co=new IntersectionObserver(e=>{e.forEach(x=>{if(!x.isIntersecting)return;const el=x.target,t=+el.dataset.target,s=el.dataset.suffix||'';if(!t){co.unobserve(el);return}let c=0;const st=t/40;const tm=setInterval(()=>{c+=st;if(c>=t){c=t;clearInterval(tm)}el.textContent=Math.round(c)+s},30);co.unobserve(el)})},{threshold:.5});
+    document.querySelectorAll('[data-target]').forEach(el=>co.observe(el));
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
     </script>
 </body>
 </html>
