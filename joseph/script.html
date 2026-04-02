@@ -4,48 +4,149 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Joseph Call Script — GeniusXAi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#0a0a0f;color:#e2e8f0;padding:24px;max-width:720px;margin:0 auto;line-height:1.7}
-h1{font-size:28px;font-weight:800;margin-bottom:8px;color:#fff}
-h2{font-size:22px;font-weight:700;margin:40px 0 12px;color:#10b981;border-bottom:1px solid rgba(16,185,129,0.2);padding-bottom:8px}
-h3{font-size:16px;font-weight:700;color:#3b82f6;margin:24px 0 8px;text-transform:uppercase;letter-spacing:1px}
-p{font-size:17px;color:#cbd5e1;margin-bottom:16px}
-.meta{font-size:14px;color:#64748b;margin-bottom:32px}
-.say{background:rgba(255,255,255,0.03);border-left:3px solid #10b981;padding:16px 20px;border-radius:0 8px 8px 0;margin:12px 0;font-size:16px;color:#e2e8f0}
-.objection{background:rgba(239,68,68,0.06);border-left:3px solid #ef4444;padding:12px 20px;border-radius:0 8px 8px 0;margin:8px 0}
-.objection strong{color:#f87171;font-size:15px}
-.objection .reply{color:#6ee7b7;margin-top:6px;font-size:15px}
-.note{font-size:14px;color:#f59e0b;font-style:italic;margin:8px 0}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #020617;
+  color: #cbd5e1;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  line-height: 1.7;
+  padding: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+}
+h1 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #f8fafc;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+h1 span { color: #10b981; }
+.subtitle {
+  font-size: 15px;
+  color: #94a3b8;
+  letter-spacing: 0.5px;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #10b981;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin: 32px 0 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+h2 .num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 8px;
+  font-size: 15px;
+  color: #10b981;
+  flex-shrink: 0;
+}
+.card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: 3px solid #10b981;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 12px;
+  font-size: 17px;
+  color: #e2e8f0;
+  line-height: 1.8;
+}
+.objection-section h2 {
+  color: #f59e0b;
+}
+.objection-section h2 .num {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.25);
+  color: #f59e0b;
+}
+.objection {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: 3px solid #ef4444;
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin-bottom: 10px;
+}
+.objection strong {
+  color: #fca5a5;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 8px;
+}
+.objection .reply {
+  color: #6ee7b7;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.note {
+  font-size: 15px;
+  color: #f59e0b;
+  font-style: italic;
+}
+.divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin: 24px 0;
+}
+.footer {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  font-size: 14px;
+  color: #64748b;
+  text-align: center;
+}
 </style>
 </head>
 <body>
 
-<h1>Joseph Call Script</h1>
-<p class="meta">North London Lettings &mdash; ~5 minutes | AI Receptionist Pitch</p>
+<h1>Joseph <span>Call Script</span></h1>
+<div class="subtitle">North London Lettings &mdash; AI Receptionist Pitch &mdash; ~5 minutes</div>
 
-<h2>1. Open</h2>
-<div class="say">"Joseph, thanks for taking the time. I want to show you something that's going to change how you handle inquiries.<br><br>Right now, every missed call is a missed tenant. Every slow reply loses you to the agent down the road. We're going to fix that."</div>
+<h2><span class="num">1</span> Open</h2>
+<div class="card">"Joseph, thanks for taking the time. I want to show you something that's going to change how you handle inquiries.<br><br>Right now, every missed call is a missed tenant. Every slow reply loses you to the agent down the road. We're going to fix that."</div>
 
-<h2>2. The Reality</h2>
-<div class="say">"Let me show you what's actually happening in North London lettings right now.<br><br>Camden averages 2,804 a month for a 2-bed. Islington, 2,733. Hackney, 2,582. Real numbers from London City Hall data.<br><br>But here's the problem &mdash; agents are missing 5 to 10 new business calls per week per branch. That's not my opinion, that's Cymphony's research. And 40 percent of inquiries come in evenings and weekends &mdash; when you're closed.<br><br>At North London's average rent, that's 130 to 260 thousand in annual revenue per branch walking to your competitors.<br><br>And the Tenancy Ombudsman saw a 58 percent spike in complaints this year. The number one reason? Poor communication. Not responding fast enough is now a compliance risk, not just a sales problem."</div>
+<h2><span class="num">2</span> The Reality</h2>
+<div class="card">"Let me show you what's actually happening in North London lettings right now.<br><br>Camden averages 2,804 a month for a 2-bed. Islington, 2,733. Hackney, 2,582. Real numbers from London City Hall data.<br><br>But here's the problem &mdash; agents are missing 5 to 10 new business calls per week per branch. That's not my opinion, that's Cymphony's research. And 40 percent of inquiries come in evenings and weekends &mdash; when you're closed.<br><br>At North London's average rent, that's 130 to 260 thousand in annual revenue per branch walking to your competitors.<br><br>And the Tenancy Ombudsman saw a 58 percent spike in complaints this year. The number one reason? Poor communication. Not responding fast enough is now a compliance risk, not just a sales problem."</div>
 
-<h2>3. Pain Points</h2>
-<div class="say">"You already know this, but let me spell it out.<br><br>You're getting 35 percent more calls than five years ago because of portal click-to-call. Same staff, more volume. And those inquiries are scattered across three platforms &mdash; Rightmove gets 86 percent of the traffic, then Zoopla, then OnTheMarket. No central system catching all of them.<br><br>46 percent of agents are doing admin in the evenings just to keep up. 25 percent are working weekends on paperwork. That's not running a business, that's being run by one.<br><br>And no-show viewings. You block an hour, drive across, nobody turns up. No reminders sent, no reconfirmation. That's your time and your petrol wasted."</div>
+<h2><span class="num">3</span> Pain Points</h2>
+<div class="card">"You already know this, but let me spell it out.<br><br>You're getting 35 percent more calls than five years ago because of portal click-to-call. Same staff, more volume. And those inquiries are scattered across three platforms &mdash; Rightmove gets 86 percent of the traffic, then Zoopla, then OnTheMarket. No central system catching all of them.<br><br>46 percent of agents are doing admin in the evenings just to keep up. 25 percent are working weekends on paperwork. That's not running a business, that's being run by one.<br><br>And no-show viewings. You block an hour, drive across, nobody turns up. No reminders sent, no reconfirmation. That's your time and your petrol wasted."</div>
 
-<h2>4. The Solution</h2>
-<div class="say">"So here's what we build for you.<br><br>An AI receptionist that answers every call, 24/7. Evenings, weekends, bank holidays. Sounds natural &mdash; not a robot.<br><br>It qualifies every lead in 90 seconds flat. Budget, move-in date, employment, references, pets. It knows your criteria. It only passes through leads that actually match.<br><br>Then it books the viewing directly into your calendar and sends the tenant a confirmation with a reminder. No more no-shows.<br><br>And for portal inquiries &mdash; Rightmove, Zoopla, OnTheMarket &mdash; it responds within 60 seconds. Before they've even finished messaging the next agent."</div>
+<h2><span class="num">4</span> The Solution</h2>
+<div class="card">"So here's what we build for you.<br><br>An AI receptionist that answers every call, 24/7. Evenings, weekends, bank holidays. Sounds natural &mdash; not a robot.<br><br>It qualifies every lead in 90 seconds flat. Budget, move-in date, employment, references, pets. It knows your criteria. It only passes through leads that actually match.<br><br>Then it books the viewing directly into your calendar and sends the tenant a confirmation with a reminder. No more no-shows.<br><br>And for portal inquiries &mdash; Rightmove, Zoopla, OnTheMarket &mdash; it responds within 60 seconds. Before they've even finished messaging the next agent."</div>
 
-<h2>5. How It Works</h2>
-<div class="say">"Here's exactly what your setup looks like.<br><br>Step one &mdash; we train it on your properties. Pricing, availability, your qualifying criteria. What you accept, what you don't.<br><br>Step two &mdash; calls forward to the AI after hours. Or all the time, your choice. Portal inquiries get auto-responded by email and SMS.<br><br>Step three &mdash; the AI qualifies them. Scores them A, B, or C. You only deal with the A's.<br><br>Step four &mdash; qualified leads get booked straight in. Confirmation SMS goes out automatically.<br><br>Step five &mdash; every morning you get a briefing. New leads, viewings booked, follow-ups due, no-shows flagged.<br><br>Step six &mdash; it chases. Viewing reminders the night before. Post-viewing follow-up. Reference chasing. Deposit nudges. It doesn't drop leads."</div>
+<h2><span class="num">5</span> How It Works</h2>
+<div class="card">"Here's exactly what your setup looks like.<br><br>Step one &mdash; we train it on your properties. Pricing, availability, your qualifying criteria. What you accept, what you don't.<br><br>Step two &mdash; calls forward to the AI after hours. Or all the time, your choice. Portal inquiries get auto-responded by email and SMS.<br><br>Step three &mdash; the AI qualifies them. Scores them A, B, or C. You only deal with the A's.<br><br>Step four &mdash; qualified leads get booked straight in. Confirmation SMS goes out automatically.<br><br>Step five &mdash; every morning you get a briefing. New leads, viewings booked, follow-ups due, no-shows flagged.<br><br>Step six &mdash; it chases. Viewing reminders the night before. Post-viewing follow-up. Reference chasing. Deposit nudges. It doesn't drop leads."</div>
 
-<h2>6. The Numbers</h2>
-<div class="say">"Let me talk money.<br><br>Agents using this system are booking 3x more viewings from the same inquiry volume. Not more marketing spend &mdash; just faster response and better follow-up.<br><br>You save roughly 15 hours a week on qualifying and admin. That's 15 hours you can spend on valuations, viewings, or just going home at a reasonable time.<br><br>A receptionist in North London costs you 28 to 35 thousand a year. Works 9 to 5. Takes holidays. Calls in sick on Mondays.<br><br>This costs a fraction of that. Works every hour of every day."</div>
+<h2><span class="num">6</span> The Numbers</h2>
+<div class="card">"Let me talk money.<br><br>Agents using this system are booking 3x more viewings from the same inquiry volume. Not more marketing spend &mdash; just faster response and better follow-up.<br><br>You save roughly 15 hours a week on qualifying and admin. That's 15 hours you can spend on valuations, viewings, or just going home at a reasonable time.<br><br>A receptionist in North London costs you 28 to 35 thousand a year. Works 9 to 5. Takes holidays. Calls in sick on Mondays.<br><br>This costs a fraction of that. Works every hour of every day."</div>
 
-<h2>7. Close</h2>
-<div class="say">"Joseph, we can have this built and running for you in two weeks. Trained on your properties, your process, your voice.<br><br>You approve everything before it goes live. If you're not happy, you cancel anytime.<br><br>But here's what I'd suggest &mdash; let's start with your busiest listing. One property. See the results in the first week. Then we scale it across everything you've got.<br><br>Sound fair?"</div>
+<h2><span class="num">7</span> Close</h2>
+<div class="card">"Joseph, we can have this built and running for you in two weeks. Trained on your properties, your process, your voice.<br><br>You approve everything before it goes live. If you're not happy, you cancel anytime.<br><br>But here's what I'd suggest &mdash; let's start with your busiest listing. One property. See the results in the first week. Then we scale it across everything you've got.<br><br>Sound fair?"</div>
 
-<h2>Objection Handlers</h2>
+<hr class="divider">
+
+<div class="objection-section">
+<h2><span class="num">!</span> Objection Handlers</h2>
 
 <div class="objection">
 <strong>"What if tenants don't like talking to AI?"</strong>
@@ -64,13 +165,16 @@ p{font-size:17px;color:#cbd5e1;margin-bottom:16px}
 
 <div class="objection">
 <strong>"How much?"</strong>
-<div class="reply note">[Sam: insert your pricing here &mdash; suggest &pound;497-997/mo setup + &pound;297-497/mo ongoing based on volume]</div>
+<div class="reply"><span class="note">[Sam: insert your pricing here &mdash; suggest &pound;497&ndash;997 setup + &pound;297&ndash;497/mo ongoing based on volume]</span></div>
 </div>
 
 <div class="objection">
 <strong>"Can I try it first?"</strong>
 <div class="reply">"Absolutely. We'll set up one property as a pilot. You see real results before committing to anything bigger."</div>
 </div>
+</div>
+
+<div class="footer">Sam &amp; Alberto &mdash; GeniusXAi</div>
 
 </body>
 </html>
